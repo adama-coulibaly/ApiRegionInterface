@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscription</title>
+</head>
+
+<body>
+
+    <div class="principale">
+        <h1>Inscription</h1>
+        <form action="#" method="post" class="container">
+
+            <div class="champs row">
+
+
+                <div class="lesNoms col-md-6 my-2">
+                    <input type="text" name="username" id="username" placeholder="username" class="form-control ">
+                </div>
+                <div class="lesNoms col-md-6  my-2">
+                    <input type="email" name="email" id="email" placeholder="Email" class="form-control">
+                </div>
+                <div class="lesPasses col-md-6 my-2">
+                    <input type="password" name="passe1" id="passe1" placeholder="Mot de passe" class="form-control">
+                </div>
+                <div class="lesPasses col-md-6 my-2">
+                    <input type="password" name="passe2" id="passe2" placeholder="Confirmé" class="form-control">
+                </div>
+                
+            </div>
+
+            <div class="btn-submit">
+                <input type="submit" value="S'inscrire" name="inscription" class="btn submit-btn">
+            </div>
+
+        </form>
+        <div class="foter-text">
+            <h2>Vous avez déjà un compte ? <span><a routerLink="./connexion">Connexion</a></span></h2>
+        </div>
+    </div>
+
+
+</body>
+
+</html>

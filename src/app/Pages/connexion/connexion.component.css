@@ -1,0 +1,46 @@
+body{
+    
+    background-image: url('/assets/Images/Inscription.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    width: 100%;
+    height: 620px;
+    margin: 0px !important;
+    background-color: rgba(0, 0, 0, 0.1) !important;
+}
+.principale{
+    text-align: center;
+}
+.principale h1{
+color: white;
+font-weight: bold;
+font-size: 50px;
+padding: 5%;
+}
+input{
+    margin: 2%;
+    font-size: 25px;
+}
+.foter-text{
+    color: white; font-size: 30px;
+    font-weight: bold;
+}
+.foter-text span a{
+text-decoration: none;
+color: #FF6B00;
+font-weight: bold;
+
+}
+.submit-btn{
+    background-color: #FF6B00;
+    border-radius: 10px;
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+}
+.foter-text{
+margin-top: 2%;
+    
+}

@@ -1,0 +1,61 @@
+<div class="container caroussel-home" >
+    <ngb-carousel *ngIf="images">
+        <ng-template ngbSlide>
+            <div class="picsum-img-wrapper">
+                <img [src]="images[0]" alt="Random first slide" />
+            </div>
+            <div class="carousel-caption">
+                <h3>First slide label</h3>
+                <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+            </div>
+        </ng-template>
+        <ng-template ngbSlide>
+            <div class="picsum-img-wrapper">
+                <img [src]="images[1]" alt="Random second slide" />
+            </div>
+            <div class="carousel-caption">
+                <h3>Second slide label</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>
+        </ng-template>
+        <ng-template ngbSlide>
+            <div class="picsum-img-wrapper">
+                <img [src]="images[2]" alt="Random third slide" />
+            </div>
+            <div class="carousel-caption">
+                <h3>Third slide label</h3>
+                <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+            </div>
+        </ng-template>
+    </ngb-carousel>
+</div>
+
+
+<div class="container">
+    <div class="mes-box">
+
+        <div class="tourisme">
+            <div class="image-box">
+                <img src="./assets/Images/tours.jpg" alt="Tourisme" >
+            </div>
+            <div class="box-description">
+                <h1>Tourisme</h1>
+                <p>
+                    Le tourisme au Mali est un secteur de l'économie qui prend une ampleur ces
+                    dernières années. Le nombre de visiteurs est passé de 98 000 en 2002 à 250
+                    000 en 2007. Les recettes provenant du secteur touristique sont passées de
+                    64,648 milliards de francs CFA en 2001 à 110 milliards de FCFA en 2007 au
+                    Mali, selon l'Office du tourisme et de l'hôtellerie (OMATHO), à Bamako1.
+                </p>
+            </div>
+            <div class="boutons-box">
+                <button cl>Découvir</button>
+            </div>
+        </div>
+
+        <div class="regions">
+
+        </div>
+
+    </div>
+</div>
