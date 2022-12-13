@@ -6,7 +6,7 @@ body{
     background-size: cover;
     background-attachment: fixed;
     width: 100%;
-    height: 620px;
+    height: 100vh;
     margin: 0px !important;
     background-color: rgba(0, 0, 0, 0.1) !important;
 }
@@ -47,8 +47,15 @@ font-weight: bold;
    
     @media screen and (max-width: 767px) {
        
+        .principale{
+            width: 100%;
+            height: 100vh;
+        }
          .champs{
-        width: 100%;
-        margin-left: 0px;
-    }
+            margin-top: 10%;
+                         width: 100%;
+            }
+            .foter-text{
+                margin-top: 25%;     
+                }
       }

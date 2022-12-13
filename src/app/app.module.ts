@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { AccueilComponent } from './Pages/accueil/accueil.component';
 import { ConnexionComponent } from './Pages/connexion/connexion.component';
 import { InscriptionComponent } from './Pages/inscription/inscription.component';
+import { RegionComponent } from './Pages/region/region.component';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import { InscriptionComponent } from './Pages/inscription/inscription.component'
     InscriptionComponent,
     AccueilComponent,
     ConnexionComponent,
+    RegionComponent,
     
 
   ],

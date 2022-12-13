@@ -6,9 +6,7 @@ body{
     background-size: cover;
     background-attachment: fixed;
     width: 100%;
-    height: 620px;
-    margin: 0px !important;
-    background-color: rgba(0, 0, 0, 0.1) !important;
+    height: 100vh;
 }
 .principale{
     text-align: center;
@@ -43,4 +41,24 @@ font-weight: bold;
 .foter-text{
 margin-top: 2%;
     
+}
+
+/* =======================================================================  MEDI QUERY MOBILE SCREEN +++++++++++++++++++++++ */
+
+@media screen and (max-width: 767px) {
+
+    body{
+        width: 100%;
+        height: 100vh;  
+    }
+    .cont{
+        margin-top: 30% ;
+    }
+    input{
+        margin: 0%;
+        font-size: 25px;
+    }
+    .foter-text{
+        margin-top: 25%;     
+        }
 }

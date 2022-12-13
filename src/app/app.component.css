@@ -1,0 +1,50 @@
+header{
+    background-color: #5B7CFD;
+    height: 65px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+   z-index: 1;
+}
+.header-container{
+    display: grid;
+    grid-template-columns: 1fr 500px;
+    justify-content: space-evenly;
+    margin: 2%;
+}
+.les-mesnus{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    font-weight: bold;
+    gap: 3%;
+}
+.les-mesnus a{
+    color: white; text-decoration: none;
+}
+.profil-menu span{
+    height: 100px;
+    width: 100px;
+    border-radius: 40px;
+    background: #FF6B00;
+    padding: 80%;
+}
+
+/* =======================================================================  MEDI QUERY MOBILE SCREEN +++++++++++++++++++++++ */
+
+@media screen and (max-width: 767px) {
+
+    header{
+        position: fixed;
+        margin: 0;
+        
+    }
+    .header-container{
+        display: grid;
+        grid-template-columns: 1fr 350px;
+        width: 100%;
+        left: 0;
+        right: 0;
+        margin: 3% ;
+    }
+}

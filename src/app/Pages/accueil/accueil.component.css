@@ -1,6 +1,71 @@
 .caroussel-home{
+     text-align: center;
+    margin-top: 8%;
+    width: 100%;  
+    margin-bottom: 5%; 
+   
+}
+.mes-box{
+    display: flex;
+    flex-direction: row;
+    gap: 2%;
+}
+.tourisme, .regions{
+    border-radius: 0px 0px 10px 10px;
+    box-shadow: 0px 4px 29px rgba(0, 0, 0, 0.25);
+    flex-wrap: wrap;
+}
+.image-box{
     text-align: center;
-    margin: 5%;
-    width: 100%;
-    
+    object-fit: fill;
+    width: 80%; border: 1px solid;
+}
+.box-description{
+    padding: 2%;
+    text-align: justify;
+    font-style: "poppins";
+}
+.box-description h1{
+    text-align: center;
+ font-weight: bold;
+ color: #5B7CFD;
+}
+
+.boutons-box{
+    text-align: center;
+    margin: 3%;
+ 
+}
+.boutons-box .btn{
+    background-color: #FF6B00;
+    color: white;
+    font-weight: 500; 
+    width: 30%;
+    padding: 2%;
+}
+.boutons-box .btn a{
+    text-decoration: none;
+    color: white;
+}
+
+/* =======================================================================  MEDI QUERY MOBILE SCREEN +++++++++++++++++++++++ */
+
+@media screen and (max-width: 767px) {
+
+    body{
+        overflow-y: hidden;
+    }
+    .caroussel-home{
+        text-align: center; 
+      
+   }
+   .mes-box{
+       display: flex;
+       flex-direction: column;
+       margin: 1%;
+       
+   }
+   .tourisme, .regions{
+    margin-top: 20px;
+}
 }
