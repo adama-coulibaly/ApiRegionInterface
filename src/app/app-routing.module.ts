@@ -14,10 +14,8 @@ const routes: Routes = [
   {path:'inscription', component:InscriptionComponent},
   {path:'regions', component:RegionComponent},
   {path:'tourisme', component:TourismeComponent},
-  {path:'details-regions', component:DetailsRegionsComponent}
-
-
-];
+  {path:'details-regions', component:DetailsRegionsComponent},
+ ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

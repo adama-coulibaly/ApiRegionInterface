@@ -1,0 +1,51 @@
+[
+    {
+        "id":1,
+        "lieu":"Djenné-Mali",
+        "image":"https://www.cityzeum.com/images/edito/header/144.webp",
+        "description":"Ville mythique, connue pour son architecture de banco homogène, Djenné est située à l’extrémité sud-ouest du delta intérieur du Niger. Fondée sans doute vers les VIIIe-IXe s par des Bozos, elle est considérée comme la ville-sœur de Tombouctou. Carrefour du commerce transsaharien. Djenné se développa surtout à partir du XIIe s, attirant toutes les ethnies (sorko, soit les Bozos et les Somonos, bambara, songhaïe, peule).",
+        "lien":"https://www.routard.com/guide_voyage_lieu/5912-djenne.htm"
+    },
+    {
+        "id":2,
+        "lieu":"Pays-dogon",
+        "image":"https://www.cityzeum.com/media/article/large/15189.webp",
+        "description":"Le Pays dogon s’étend sur un plateau doucement incliné du sud-est vers le nord-ouest (vers la plaine du Niger), grosso modo délimité par Bandiagara à l’ouest, Douentza au nord, les confins du Burkina Faso à l’est et Bankass au sud. La partie élevée du Pays dogon forme une longue falaise de grès ferrugineux, longue de près de 80 km qui surplombe, de 300 à 400 m, la plaine sablonneuse du Séno. Les villages dogons se trouvent sur cette falaise. Les Dogons, aujourd’hui au nombre de 800 000, sont venus, vers le XIVe s, dans cet endroit qui offrait d’innombrables refuges naturels. Il n’existe pas d’unité linguistique dans les 289 villages de la falaise de Bandiagara. Les Peuls étant nombreux à vivre parmi les Dogons, leur langue, le fulfudé, est souvent utilisée comme langue véhiculaire.",
+        "lien":"https://www.routard.com/guide_voyage_lieu/5921-pays_dogon.htm"
+    },
+    {
+        "id":3,
+        "lieu":"Ségou",
+        "image":"https://www.cityzeum.com/images/wikimedia/hand_der_fatima.webp",
+        "description":"Ségou, capitale de l’ancien Empire bambara, jumelée avec Angoulême, est une ville fière de son passé. Un site calme, aéré et reposant, touristique sans être envahi, qui mérite donc une halte. Le centre possède quelques jolies maisons de banco ocre rouge. À l’entrée en venant de Bamako, quelques exemples frappants de l’architecture coloniale.",
+        "lien":"https://www.routard.com/guide_voyage_lieu/2570-segou.htm"
+    },
+    {
+        "id":4,
+        "lieu":"Mopti",
+        "image":"https://petitfute.twic.pics/medias/photo/originale/1f/dd/424281-mali-timbuktu-mali-march.jpg?twic=v1/cover=780x439",
+        "description":"La ville de Mopti, surnommée la Venise malienne, est bâtie sur des îles entourées de marécages et reliées entre elles par des digues. La ville se dresse à la confluence du Niger et de son principal affluent, le Bani. Erigée en chef-lieu de région, Mopti, capitale de la cinquième région économique du Mali depuis 1960, compte plus de 100 000 habitants.",
+        "lien":"https://www.tresorsdumonde.fr/mopti/"
+    },
+    {
+        "id":5,
+        "lieu":"Sikasso",
+        "image":"https://www.travel-pictures-gallery.com/images/mali/sikasso/sikasso-0003.jpg",
+        "description":"La ville de Sikasso s'étend dans une cuvette verdoyante qui abrite des forêts de manguiers, des rizières et des bananeraies. Initialement petit village de chasseurs du nom de  <<Solokan>> (solo, éléphant et kan, village), Sikasso est aujourd'hui la capitale de la troisième région du Mali et une ville carrefour entre Bamako, la Côte d'Ivoire et le Burkina Faso. Sikasso, ville royale, charme les visiteurs par la splendeur de sa nature et le dynamisme d'une population profondément attachée à son histoire.",
+        "lien":"https://www.petitfute.com/v37664-sikasso/"
+    },
+    {
+        "id":6,
+        "lieu":"Tomboctou",
+        "image":"https://upload.wikimedia.org/wikipedia/commons/1/19/Tombouctou.jpg",
+        "description":"Ségou, capitale de l’ancien Empire bambara, jumelée avec Angoulême, est une ville fière de son passé. Un site calme, aéré et reposant, touristique sans être envahi, qui mérite donc une halte. Le centre possède quelques jolies maisons de banco ocre rouge. À l’entrée en venant de Bamako, quelques exemples frappants de l’architecture coloniale.",
+        "lien":"https://www.routard.com/guide_voyage_lieu/2570-segou.htm"
+    },
+    {
+        "id":7,
+        "lieu":"Gao",
+        "image":"https://selogeraumali.com/wp-content/uploads/2018/11/le-tombeau-des-askias-visoterra-61746.jpg",
+        "description":"Vous pourrez visionner Gao vidéo pour obtenir plus de renseignements sur votre nouvelle destination de vie au Mali. Ne restez pas étranger aux dernières nouvelles sur Gao mali info pour faciliter votre prise de décision de déménager, car de cette façon, rien ne causerait votre surprise. Vous saurez à en quoi bien vous en tenir.",
+        "lien":"https://selogeraumali.com/gao/"
+    }
+]

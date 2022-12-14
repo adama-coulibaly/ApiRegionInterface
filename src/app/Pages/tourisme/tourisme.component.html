@@ -7,9 +7,29 @@
     <title>Document</title>
 </head>
 <body>
+
     <div class="container">
-        <h2>La liste des sites touristiques</h2>
+
+        <h2>La liste des sites touristiques</h2>      
         
+        <div class="box-lieux">
+            <div class="card sections" *ngFor="let donnees of tourismes">
+                <div class="card-img-top box-image">
+                    <img src="{{donnees.image}}" alt="">
+                </div>
+                <div class="description">
+                    <p>{{donnees.description}}</p>
+                    <div class="footer-desc">
+                        <div class="lieux">{{donnees.lieu}}</div>
+                       <div> <button class="btn"><a href="{{donnees.lien}}" target="_blank"> Voir plus</a></button></div>
+
+                    </div>
+                </div>
+            </div>
+
+         
+        </div>
+
 
 
     </div>

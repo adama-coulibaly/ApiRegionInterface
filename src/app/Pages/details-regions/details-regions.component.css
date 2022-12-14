@@ -68,6 +68,15 @@
     /* background-color: #fff; */
 }
 
+/* ====================================SECTION CONTACT */
+.btn-contact{
+    background-color: #FF6B00;
+    color: white;
+    font-weight: 500; 
+    width: 30%;
+    padding: 2%;
+}
+
 
 /* =======================================================================  MEDI QUERY MOBILE SCREEN +++++++++++++++++++++++ */
 

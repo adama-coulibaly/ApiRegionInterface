@@ -1,3 +1,53 @@
 .container h2{
     margin-top: 6%;
 }
+.box-lieux{
+    display: grid;
+    grid-template-columns: auto;
+    gap: 10px;
+}
+.sections{
+    display: flex;
+    flex-direction: row;
+    /* justify-content: space-around; */
+}
+.box-image img{
+    width: 500px;
+    height: auto;
+}
+.description{
+    text-align: justify;
+    padding: 2%;
+    /* line-height: 30px; */
+} 
+.footer-desc{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+.footer-desc .btn{
+    background-color: #FF6B00;
+    color: white;
+    font-weight: 500; 
+}
+.footer-desc .btn a{
+    color: white;
+text-decoration: none;
+}
+
+/* =======================================================================  MEDI QUERY MOBILE SCREEN +++++++++++++++++++++++ */
+
+@media screen and (max-width: 767px) {
+    .container h2{
+        margin-top: 15%;
+    }
+    .sections{
+        display: flex;
+        flex-direction: column;
+    
+    }
+    .box-image img{
+        width: 100%;
+        height: auto;
+    }
+}

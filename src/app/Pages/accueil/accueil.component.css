@@ -1,6 +1,6 @@
 .caroussel-home{
      text-align: center;
-    margin-top: 8%;
+    margin-top: 5%;
     width: 100%;  
     margin-bottom: 5%; 
    
@@ -47,6 +47,15 @@
     text-decoration: none;
     color: white;
 }
+.carousel-caption{
+    background-color: #FF6B00;
+  color: white;
+}
+.caroussel img{
+    width: 100%;
+    height: 550px;
+}
+
 
 /* =======================================================================  MEDI QUERY MOBILE SCREEN +++++++++++++++++++++++ */
 
@@ -68,4 +77,9 @@
    .tourisme, .regions{
     margin-top: 20px;
 }
+.caroussel img{
+    width: 100%;
+    height: 300px;
+}
+
 }
