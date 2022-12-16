@@ -2,19 +2,43 @@
 
 <div class="topnav" id="myTopnav">
   <div class="left">
-    MaliTourisme
+    <a routerLink="/accueil">MaliTourisme</a>
   </div>
 
   <div class="right">
-    <a routerLink="/accueil" class="active">Acuueil</a>
-      <a routerLink="/tourisme">Tourisme</a>
-      <a routerLink="/regions">Régions</a>
-      <a routerLink="/connexion">Connexion</a>
-      <a routerLink="/inscription">Inscription</a>
+      <a routerLink="/accueil"  routerLinkActive="active">Acuueil</a>
+      <a routerLink="/tourisme" routerLinkActive="active">Tourisme</a>
+      <a routerLink="/regions" routerLinkActive="active">Régions</a>
+
+      <a routerLink="/connexion" routerLinkActive="active"> <i class="fa fa-sign-in fa-1.5x" aria-hidden="true"></i> Connexion</a>
+
+     
+      <!-- <a routerLink="/connexion">Connexion</a>
+      <a routerLink="/inscription">Inscription</a> -->
       <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-        <i class="fa fa-bars"></i>
+        <i class="fa fa-bars fa-2x"></i>
       </a>
   </div>
  
 </div>
 <router-outlet></router-outlet>
+
+<div class="footer" >
+  <div class="left-footer">
+      <div>
+        <h3>
+          MaliTourisme for you
+        </h3>
+      </div>
+
+      <div><h3>© 2022 MALITOURISME.</h3></div>
+      <div class="socieaux">
+          <div><i class="fa fa-envelope fa-2x"></i></div>
+          <div><i class="fa fa-facebook-official fa-2x"></i></div>
+          <div><i class="fa fa-youtube-play fa-2x"></i></div>
+      </div>
+    
+
+  </div>
+
+</div>

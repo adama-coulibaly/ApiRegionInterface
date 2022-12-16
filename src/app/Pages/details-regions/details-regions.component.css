@@ -77,6 +77,16 @@
     padding: 2%;
 }
 
+/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ LES ICONES COULEURS ++++++++++++++ */
+.fas{
+    color: #FF6B00;
+}
+li{
+    font-weight: bold;
+    text-decoration: none;
+    color: #5B7CFD;
+
+}
 
 /* =======================================================================  MEDI QUERY MOBILE SCREEN +++++++++++++++++++++++ */
 

@@ -11,6 +11,8 @@ import { InscriptionComponent } from './Pages/inscription/inscription.component'
 import { RegionComponent } from './Pages/region/region.component';
 import { DetailsRegionsComponent } from './Pages/details-regions/details-regions.component';
 import { TourismeComponent } from './Pages/tourisme/tourisme.component';
+import {HttpClientModule} from '@angular/common/http'
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,7 @@ import { TourismeComponent } from './Pages/tourisme/tourisme.component';
     ConnexionComponent,
     RegionComponent,
     DetailsRegionsComponent,
-    TourismeComponent,
+    TourismeComponent
     
 
   ],
@@ -28,7 +30,10 @@ import { TourismeComponent } from './Pages/tourisme/tourisme.component';
     BrowserModule,
     AppRoutingModule,
     NgbModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
