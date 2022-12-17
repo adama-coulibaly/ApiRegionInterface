@@ -12,30 +12,70 @@
 
     <div class="principale">
         <h1>Connexion</h1>
-        <form action="#" method="post" class="container cont" [formGroup]="formGroupe" (ngSubmit)="loginPricess()">
+        <form  *ngIf="!isLoggedIn" name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
 
             <div class="champs1 row ">
                 <div class="col-md-3"></div>
                 <div class="col-md-6 my-3">
-                    <input type="text" name="username" id="username" placeholder="username" formControlName="username"  class="form-control ">
+                    <input   type="text" class="form-control" name="username" [(ngModel)]="form.username" required #username="ngModel">
                 </div>
                  <div class="col-md-3"></div>
             </div>
 
+            <div
+            class="alert alert-danger"
+            role="alert"
+            *ngIf="username.errors && f.submitted"
+          >
+           Nom d'utilisateur est obligatoire !
+          </div>
+
             <div class="champs row">
                 <div class="col-md-3"></div>
                 <div class="lesPasses col-md-6 my-3">
-                    <input type="password" name="password" id="passe1" placeholder="Mot de passe" formControlName="password"  class="form-control">
+                    <input  type="password" class="form-control" name="password" [(ngModel)]="form.password" required minlength="6"  #password="ngModel">
                 </div>
                 <div class="col-md-3"></div>
                
             </div>
 
-            <div class="btn-submit">
-                <input type="submit" value="Se connecter" name="connexion" class="btn submit-btn">
+            <div
+            class="alert alert-danger"
+            role="alert"
+            *ngIf="password.errors && f.submitted"
+          >
+            <div *ngIf="password.errors">Mot de passe est obligatoire !</div>
+            <div *ngIf="password.errors">
+              Password must be at least 6 characters
             </div>
+          </div>
+
+
+   <!-- <div class="btn-submit">
+                <input type="submit" value="Se connecter" name="connexion" class="btn submit-btn">
+            </div> -->
+
+            <div class="form-group">
+                <button class="btn btn-primary btn-block">
+                  Login
+                </button>
+              </div>
+
+            <div
+            class="alert alert-danger"
+            role="alert"
+            *ngIf="f.submitted && isLoginFailed"
+          >
+            Connexion impossible : {{ errorMessage }}
+          </div>
+
+         
 
         </form>
+        <div class="alert alert-success" *ngIf="isLoggedIn">
+            Logged in as {{ roles }}.
+          </div>
+          
         <div class="foter-text">
             <h2>Vous n'avez pas de compte ? <span><a routerLink="./inscription">Inscription</a></span></h2>
         </div>

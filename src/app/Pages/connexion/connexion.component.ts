@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { LoginServicesService } from 'src/app/Services/login-services.service';
+import { AuthService } from 'src/app/Services/login-services.service';
+import { TokenStorageService } from 'src/app/Services/token-storage.service';
 
 @Component({
   selector: 'app-connexion',
@@ -8,35 +9,46 @@ import { LoginServicesService } from 'src/app/Services/login-services.service';
   styleUrls: ['./connexion.component.css']
 })
 export class ConnexionComponent implements OnInit {
+  form: any = {
+    username: null,
+    password: null
+  };
+  isLoggedIn = false;
+  isLoginFailed = false;
+  errorMessage = '';
+  roles: string[] = [];
 
-  formGroupe!:FormGroup
-  constructor(private loginservice:LoginServicesService) { }
+  constructor(private authService: AuthService, private tokenStorage: TokenStorageService) { }
 
+  
   ngOnInit(): void {
-    this.initForm();
-  }
-
-  initForm (){
-    this.formGroupe = new FormGroup({
-      username:new FormControl('',Validators.required),
-      password:new FormControl('',Validators.required)
-    })
-  }
-
-  loginPricess(){
-    if(this.formGroupe.valid){
-      this.loginservice.login(this.formGroupe.value).subscribe(result=>{
-        if(result){
-          console.log("Contenu "+result);
-          alert("Contenu "+result)
-        }
-      })
+    if (this.tokenStorage.getToken()) {
+      this.isLoggedIn = true;
+      this.roles = this.tokenStorage.getUser().roles;
     }
-    else{
-      console.log("Erreur ");
-      alert("Contenu ")
-    }
-    
   }
 
+  onSubmit(): void {
+    const { username, password } = this.form;
+
+    this.authService.login(username, password).subscribe(
+      data => {
+        this.tokenStorage.saveToken(data.accessToken);
+        this.tokenStorage.saveUser(data);
+
+        this.isLoginFailed = false;
+        this.isLoggedIn = true;
+        this.roles = this.tokenStorage.getUser().roles;
+        this.reloadPage();
+      },
+      err => {
+        this.errorMessage = err.error.message;
+        this.isLoginFailed = true;
+      }
+    );
+  }
+
+  reloadPage(): void {
+    window.location.reload();
+  }
 }
