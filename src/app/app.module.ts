@@ -13,6 +13,7 @@ import { DetailsRegionsComponent } from './Pages/details-regions/details-regions
 import { TourismeComponent } from './Pages/tourisme/tourisme.component';
 import {HttpClientModule} from '@angular/common/http'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { DashboardComponent } from './Pages/dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     ConnexionComponent,
     RegionComponent,
     DetailsRegionsComponent,
-    TourismeComponent
+    TourismeComponent,
+    DashboardComponent
     
 
   ],

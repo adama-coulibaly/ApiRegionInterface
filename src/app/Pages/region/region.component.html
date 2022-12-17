@@ -41,16 +41,17 @@
     <!-- Les cardes -->
     
 <div class="section-card container">
-    <div class="cardes">
-        <div class="images-carde">  <img src="./assets/Images/bamako.jpg" alt="Régions"></div>
-        <div class="title-carde"><h3>Bamako</h3></div>
-        <div class="description-carde"> <p>Bamako est la capitale et la plus grande ville du Mali,
-             avec une population de 1 810 366 habitants en 2009 et une population estimée à 2,81
-              millions en 2022</p></div>
-        <div class="bouton-carde"><button class="btn"> <a routerLink="/details-regions"> Voir plus</a></button></div>
-    </div>
 
-    <div class="cardes">
+    <div class="cardes" *ngFor="let regions of lesRegion | paginate: { id: 'foo', itemsPerPage: 2, currentPage: page,
+    totalItems: 10 }">
+
+        <div class="images-carde">  <img src="./assets/Images/bamako.jpg" alt="Régions"></div>
+        <div class="title-carde"><h3>{{regions.nomregions}}</h3></div>
+        <div class="description-carde"> <p>{{regions.description}}</p></div>
+        <div class="bouton-carde"><button class="btn"> <a routerLink="/details-regions/{{regions.id_regions}}"> Voir plus</a></button></div>
+    </div>
+  <pagination-controls previousLabel="Précedent" nextLabel="Suivant"> </pagination-controls>
+<!--     <div class="cardes">
         <div class="images-carde">  <img src="./assets/Images/bamako.jpg" alt="Régions"></div>
         <div class="title-carde"><h3>Bamako</h3></div>
         <div class="description-carde"> <p>Bamako est la capitale et la plus grande ville du Mali,
@@ -92,10 +93,8 @@
         <div class="bouton-carde"><button class="btn"> <a href="#"> Voir plus</a></button></div>
     </div>
 
-
-    <pagination-controls previousLabel="Précedent" nextLabel="Suivant">
-            Mois
-    </pagination-controls>
+-->
+ 
 
 </div>
 
