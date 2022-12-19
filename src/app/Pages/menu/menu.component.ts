@@ -30,7 +30,6 @@ export class MenuComponent implements OnInit {
  
   logout(): void {
     console.log("Je suis cliquer")
-    alert("Je suis cliquer")
     this.tokenStorage.signOut();
     window.location.reload();
   }

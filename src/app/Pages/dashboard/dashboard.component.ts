@@ -11,14 +11,15 @@ export class DashboardComponent implements OnInit {
 
   contenu?:String;
   lesRegions!:any
+  CONTER!:any
   constructor(private boardService:UserService, private regionService:RegionsService) { }
 
   ngOnInit(): void {
 
       this.regionService.getRegions().subscribe(data=>{
         this.lesRegions = data
-
-        console.log(this.lesRegions)
+this.CONTER = this.lesRegions.length
+        console.log("this.lesRegions "+this.CONTER)
       })
 
 

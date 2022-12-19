@@ -34,15 +34,15 @@
     
 <div class="section-card container">
 
-    <div class="cardes" *ngFor="let regions of lesRegion | paginate: { id: 'foo', itemsPerPage: 2, currentPage: page,
-    totalItems: 10 }">
+    <div class="cardes" *ngFor="let regions of lesRegion |paginate:{itemsPerPage: 6, currentPage:page}; let i =index">
 
-        <div class="images-carde">  <img src="C:/Users/adcoulibaly/Desktop/Adama/CLONES_API/Backend-regions/Api-Region-Original/src/main/resources/images/{{regions.images}}" alt="Régions"></div>
+        <div class="images-carde">  <img src="../../../assets/Images/{{regions.images}}" alt="Régions"></div>
         
         <div class="title-carde"><h3>{{regions.nomregions}}</h3></div>
         <div class="description-carde"> <p>{{regions.description}}</p></div>
         <div class="bouton-carde"><button class="btn"> <a  [routerLink]="['/details-regions',regions.id_regions]"> Voir plus</a></button></div>
     </div>
-  <pagination-controls previousLabel="Précedent" nextLabel="Suivant"> </pagination-controls>
+
+  <pagination-controls  previousLabel="Précedent" nextLabel="Suivant" (pageChange)="page=$event"></pagination-controls>
 
 </div>

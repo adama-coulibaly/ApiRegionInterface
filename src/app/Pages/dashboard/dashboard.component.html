@@ -1,52 +1,164 @@
 <app-menu></app-menu>
 
-    
 
-    <!-- TABLEAU -->
-    <div class="container body">
-      <h2>Ici la listes des Régions du Mali</h2>
 
-<div class="block">
-  <div class="bx pays">
-      <h3>Pays</h3>
+<!-- TABLEAU -->
+<div class="container body">
+  <h2>Ici la listes des Régions du Mali</h2>
+
+  <div class="block">
+    <div class="bx pays">
+      <button data-bs-toggle="modal" data-bs-target="#modalAjouterPays" data-bs-whatever="@mdo" class="btn ajouter">Ajouter</button>
+      <h5>Pays</h5>
+      <h1>01</h1>
+    </div>
+
+    <div class="bx nombreRegions">
+      <button data-bs-toggle="modal" data-bs-target="#modalAjouterRegion" data-bs-whatever="@mdo" class="btn ajouter">Ajouter</button>
+      <h5>Nombre de région</h5>
+      <h1>{{CONTER}}</h1>
+    </div>
+
+    <div class="bx nombreUtilisateur">
+              <button data-bs-toggle="modal" data-bs-target="#modalAjouterRegion" data-bs-whatever="@mdo" class="btn ajouter">Ajouter</button> 
+      <h5>Utilisateur</h5>
+    </div>
   </div>
-  <div class="bx nombreRegions">
-    <h3>Pays</h3>
+
+
+
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">N°</th>
+        <th scope="col">Noms</th>
+        <th scope="col">Superficie </th>
+        <th scope="col">Activité</th>
+        <th scope="col">Langues</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let regions of lesRegions">
+        <th scope="row">{{regions.id_regions}}</th>
+        <td>{{regions.nomregions}}</td>
+        <td>{{regions.superficieregion}} km²</td>
+        <td>{{regions.activiterregion}}</td>
+        <td>{{regions.languemregion}}</td>
+        <td>
+          <div class="icones">
+            <div style="color: green;"> <i
+                class="fa-solid fa-circle-plus"></i> </div>
+            <div style="color: #FF6B00;"> <i class="fa-solid fa-pen-to-square"></i> </div>
+            <div style="color: red;"> <i class="fa-solid fa-trash"></i> </div>
+          </div>
+        </td>
+      </tr>
+
+    </tbody>
+  </table>
+</div>
+
+<!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalAjouterRegion" data-bs-whatever="@mdo">Open modal for @mdo</button> -->
+
+<!-- AJOUT D'UNE REGION -->
+<div class="modal fade" id="modalAjouterRegion" tabindex="-1" aria-labelledby="modalAjouterRegionLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modalAjouterRegionLabel">Ajouter une région</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form>
+
+          <div class="ligne-1">
+            <div class="col-md-6">
+              <label for="recipient-name" class="col-form-label">Choisir un Pays</label>
+              <select name="pays" id="pays" class="form-control">
+                <option value="MALI">MALI</option>
+                <option value="MALI">GHANA</option>
+                <option value="MALI">SENEGAL</option>
+                <option value="MALI">TOGO</option>
+              </select>
+            </div>
+
+            <div class="col-md-6">
+              <label for="recipient-name" class="col-form-label">Nom région:</label>
+              <input type="text" class="form-control" id="recipient-name">
+            </div>
+        </div>
+
+        <div class="ligne-2">
+
+          <div class="col-md-6">
+            <label for="recipient-name" class="col-form-label">Superficie de la région:</label>
+            <input type="text" class="form-control" id="recipient-name">
+          </div>
+          <div class="col-md-6">
+          <label for="recipient-name" class="col-form-label">Activité:</label>
+          <input type="text" class="form-control" id="recipient-name">
+        </div>
+      </div>
+      <div class="col-md-12">
+        <label for="recipient-name" class="col-form-label">Choisir une image:</label>
+        <input type="file" class="form-control" id="recipient-name">
+      </div>
+        <div class="col-md-12">
+          <label for="recipient-name" class="col-form-label">Description:</label>
+          <textarea type="text" name="description" rows="2" class="form-control md-textarea"
+            formControlName="description"></textarea>
+        </div>
+
+    </form>
+    </div>
+    <div class="modal-footer">
+      <div><button type="button" class="btn btn-danger" data-bs-dismiss="modal">Annuler</button></div>
+      <div><button type="button" class="btn btn-success">Créer</button></div>
+    </div>
   </div>
-  <div class="bx nombreUtilisateur">
-    <h3>Pays</h3>
-  </div>
+</div>
 </div>
 
 
+<!-- AJOUT D'UNE REGION -->
+<div class="modal fade" id="modalAjouterPays" tabindex="-1" aria-labelledby="modalAjouterPaysLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modalAjouterPaysLabel">Ajouter un pays</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form>
 
-        <table class="table table-striped">
-            <thead>
-              <tr>
-                <th scope="col">N°</th>
-                <th scope="col">Noms</th>
-                <th scope="col">Superficie </th>
-                <th scope="col">Activité</th>
-                <th scope="col">Langues</th>
-                <th scope="col">Actions</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr *ngFor="let regions of lesRegions">
-                <th scope="row">{{regions.id_regions}}</th>
-                <td>{{regions.nomregions}}</td>
-                <td>{{regions.superficieregion}} km²</td>
-                <td>{{regions.activiterregion}}</td>
-                <td>{{regions.languemregion}}</td>
-                <td>
-                    <div class="icones">
-                        <div style="color: green;"> <i class="fa-solid fa-circle-plus"></i> </div>
-                        <div style="color: #FF6B00;"> <i class="fa-solid fa-pen-to-square"></i> </div>
-                        <div style="color: red;"> <i class="fa-solid fa-trash"></i> </div>
-                    </div>
-                </td>
-              </tr>
-          
-            </tbody>
-          </table>
+       <div class="ligne-2">
+
+          <div class="col-md-6">
+            <label for="recipient-name" class="col-form-label">Superficie de la région:</label>
+            <input type="text" class="form-control" id="recipient-name">
+          </div>
+          <div class="col-md-6">
+          <label for="recipient-name" class="col-form-label">Activité:</label>
+          <input type="text" class="form-control" id="recipient-name">
+        </div>
+      </div>
+      <div class="col-md-12">
+        <label for="recipient-name" class="col-form-label">Choisir une image:</label>
+        <input type="file" class="form-control" id="recipient-name">
+      </div>
+        <div class="col-md-12">
+          <label for="recipient-name" class="col-form-label">Description:</label>
+          <textarea type="text" name="description" rows="2" class="form-control md-textarea"
+            formControlName="description"></textarea>
+        </div>
+
+    </form>
     </div>
+    <div class="modal-footer">
+      <div><button type="button" class="btn btn-danger" data-bs-dismiss="modal">Annuler</button></div>
+      <div><button type="button" class="btn btn-success">Créer</button></div>
+    </div>
+  </div>
+</div>
+</div>

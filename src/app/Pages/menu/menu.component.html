@@ -59,13 +59,12 @@
                     
         <!-- Avatar -->
         <div class="dropdown">
-          <a *ngIf="isLoggedIn == true"   data-toggle="modal" data-target=".bd-example-modal-sm">
+          <a *ngIf="isLoggedIn == true"   data-toggle="modal" data-target="bd-example-modal-sm" (click)="logout()">
+            <!-- <button (click)="logout()">Adama</button> -->
             <img
               src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp"
               class="rounded-circle"
-              height="50"
-              alt="Black and White Portrait of a Man"
-              loading="lazy" />
+              height="50"/>
           </a>
           <a  routerLink="/connexion" *ngIf="isLoggedIn == false" alt="Connexion">
             <i class="fa-solid fa-right-to-bracket" style="color: #fff; font-size: 50px;"></i>

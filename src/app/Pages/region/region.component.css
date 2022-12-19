@@ -58,6 +58,7 @@
 }
 .images-carde img{
     width: 100%;
+    height: 200px;
 }
 .title-carde h3{
  text-align: center;
@@ -80,7 +81,9 @@
     text-decoration: none;
     font-weight: bold;
 }
-
+pagination-controls{
+    text-align: center;
+}
 
 
 /* =======================================================================  MEDI QUERY MOBILE SCREEN +++++++++++++++++++++++ */

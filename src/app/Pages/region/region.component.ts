@@ -17,6 +17,7 @@ export class RegionComponent implements OnInit {
 
   content?: string;
   lesRegion!:any
+  commentaires!:any
 
   constructor(private userService: UserService,private regionsServices:RegionsService) { }
 
@@ -27,6 +28,8 @@ export class RegionComponent implements OnInit {
     this.regionsServices.getRegions().subscribe(data=>{
       this.lesRegion = data
       console.log("NOS REGIONS "+this.lesRegion)
-    })
+    });
+
+
   }
 }

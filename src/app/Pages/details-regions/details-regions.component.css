@@ -1,5 +1,30 @@
+.contenu{
+     margin-top: 8%;
+}
+.bouton-en-haut{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 4%;
+}
+.nomRegion button{
+    background-color: #5B7CFD;
+    color: white;
+    font-weight: 900;
+    padding: 5%;
+    width: 200px;
+    font-size: 25px;
+}
+.retour button{
+    background-color: #FF6B00;
+    color: white;
+    font-weight: 900;
+    padding: 5%;
+    width: 200px;
+    font-size: 25px;
+}
 .first-section{
-    margin-top: 13%;
+   
     display: flex;
     flex-direction: row;
     box-shadow: 0px 4px 29px rgba(0, 0, 0, 0.25);
@@ -29,6 +54,9 @@
     grid-template-columns: auto auto auto;
     gap: 20px;
     color: #5B7CFD;   
+}
+.details-box i{
+    color: #FF6B00;
 }
 
 .region-statistique h3{
@@ -87,11 +115,41 @@ li{
     color: #5B7CFD;
 
 }
+/* LES POSTES OU COMMENTAIRES */
+.poster{
+    border: 1px solid; 
+    margin: 2%;
+    padding: 2%;
+    display: flex;
+    flex-direction: row;
+    box-shadow: 5px 5px rgb(238, 234, 234);
+}
+.poster .users{
+    text-align: center;
+}
+.list-unstyled{
+    display: flex;
+    flex-direction: row;
+}
 
 /* =======================================================================  MEDI QUERY MOBILE SCREEN +++++++++++++++++++++++ */
 
 @media screen and (max-width: 767px) {
 
+    .nomRegion button{
+       
+        padding: 2%;
+        width: 150px;
+        font-size: 25px;
+    }
+    .retour button{
+        padding: 2%;
+        width: 150px;
+        font-size: 25px;
+    }
+   
+   
+   
     .first-section{
         display: flex;
         flex-direction: column;

@@ -6,6 +6,7 @@
 }
 
 .icones{display: flex; flex-direction: row; gap: 20px;}
+.icones i{cursor: pointer;}
 
 .block{
     display: flex;
@@ -14,12 +15,39 @@
 }
 .bx{
     border: 1px solid;
-    height: 100px;
+    height: 120px;
     width: 20%;
     border-radius: 10px;
     text-align: center;
 }
-.bx h3{
+.bx .ajouter{
+    background-color: #FF6B00;
+    padding: 2%;
+    margin: 2%;
+    color: white;
+    font-weight:700 ;
+    
+}
+.bx h5{
     font-weight: bold;
     color: #5B7CFD;
+}
+.bx h1{
+    font-weight: bold;
+    color: #5B7CFD;
+}
+ /* .pays{
+   background-color: #93a6f5; 
+}*/
+.modal-footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+   row-gap: 10px;
+}
+
+.ligne-1, .ligne-2{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
