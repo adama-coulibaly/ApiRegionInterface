@@ -44,6 +44,14 @@ font-weight: bold;
     margin-top: 2%;
         
     }
+    .annuler{
+        text-align: center;
+        color: white;
+    }
+    .annuler a{
+    text-decoration: none;
+    color: white;
+    }
    
     @media screen and (max-width: 767px) {
        

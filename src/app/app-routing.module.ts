@@ -9,7 +9,7 @@ import { RegionComponent } from './Pages/region/region.component';
 import { TourismeComponent } from './Pages/tourisme/tourisme.component';
 
 const routes: Routes = [
-  {path:"",redirectTo:"inscription",pathMatch:'full'},
+  {path:"",redirectTo:"accueil",pathMatch:'full'},
   {path:'accueil', component:AccueilComponent},
   {path:'connexion', component:ConnexionComponent},
   {path:'inscription', component:InscriptionComponent},

@@ -13,13 +13,26 @@ export class MenuComponent implements OnInit {
   isLoginFailed = false;
   errorMessage = '';
   roles: string[] = [];
+  monRole!:any
   ngOnInit(): void {
 
     if (this.tokenStorage.getToken()) {
       this.isLoggedIn = true;
       this.roles = this.tokenStorage.getUser().roles;
+      this.monRole = this.roles;
+      console.log("Mon role: "+this.roles)
     }
 
+  }
+
+  // DECONNEXION
+
+ 
+  logout(): void {
+    console.log("Je suis cliquer")
+    alert("Je suis cliquer")
+    this.tokenStorage.signOut();
+    window.location.reload();
   }
 
 }

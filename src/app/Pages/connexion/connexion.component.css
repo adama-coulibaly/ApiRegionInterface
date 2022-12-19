@@ -42,6 +42,26 @@ font-weight: bold;
 margin-top: 2%;
     
 }
+.errorMessages{
+
+    color: red;
+    font-weight: bold;
+    width: 50%;
+    /* font */
+}
+
+.annuler{
+    text-align: center;
+    color: white;
+}
+.annuler a{
+text-decoration: none;
+color: white;
+}
+.btn-block{
+    background-color: #FF6B00;
+    border: none;font-weight: bold;
+}
 
 /* =======================================================================  MEDI QUERY MOBILE SCREEN +++++++++++++++++++++++ */
 

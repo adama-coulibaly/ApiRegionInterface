@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from 'src/app/Services/login-services.service';
 import { TokenStorageService } from 'src/app/Services/token-storage.service';
+import { Router } from '@angular/router'; 
 
 @Component({
   selector: 'app-connexion',
@@ -18,7 +19,7 @@ export class ConnexionComponent implements OnInit {
   errorMessage = '';
   roles: string[] = [];
 
-  constructor(private authService: AuthService, private tokenStorage: TokenStorageService) { }
+  constructor(private authService: AuthService, private tokenStorage: TokenStorageService,private route:Router) { }
 
   
   ngOnInit(): void {
@@ -39,7 +40,10 @@ export class ConnexionComponent implements OnInit {
         this.isLoginFailed = false;
         this.isLoggedIn = true;
         this.roles = this.tokenStorage.getUser().roles;
-        this.reloadPage();
+        // this.reloadPage();
+        if(this.isLoggedIn == true){
+          this.route.navigateByUrl("/accueil");
+        }
       },
       err => {
         this.errorMessage = err.error.message;

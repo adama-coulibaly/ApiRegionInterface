@@ -1,3 +1,15 @@
+<!-- Small modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-sm">Small modal</button>
+
+<div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      ...
+    </div>
+  </div>
+</div>
+
+
 <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #5B7CFD;">
     <!-- Container wrapper -->
     <div class="container-fluid">
@@ -33,7 +45,7 @@
             <a class="nav-link" routerLink="/regions" routerLinkActive="active">Régions</a>
           </li>
 
-          <li class="nav-item" *ngIf="isLoggedIn == true">
+          <li class="nav-item" *ngIf='isLoggedIn == true && monRole == "ROLE_ADMIN" '>
             <a class="nav-link" routerLink="/dashboard" routerLinkActive="active">Tableau de board</a>
           </li>
         </ul>
@@ -47,13 +59,16 @@
                     
         <!-- Avatar -->
         <div class="dropdown">
-          <a >
+          <a *ngIf="isLoggedIn == true"   data-toggle="modal" data-target=".bd-example-modal-sm">
             <img
               src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp"
               class="rounded-circle"
               height="50"
               alt="Black and White Portrait of a Man"
               loading="lazy" />
+          </a>
+          <a  routerLink="/connexion" *ngIf="isLoggedIn == false" alt="Connexion">
+            <i class="fa-solid fa-right-to-bracket" style="color: #fff; font-size: 50px;"></i>
           </a>
        
         </div>
@@ -63,3 +78,13 @@
     <!-- Container wrapper -->
   </nav>
   <!-- Navbar -->
+
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-sm">Small modal</button>
+
+<div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      ...
+    </div>
+  </div>
+</div>
