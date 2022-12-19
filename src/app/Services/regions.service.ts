@@ -13,7 +13,17 @@ export class RegionsService {
 
   constructor(private http:HttpClient) { }
 
-   getRegions():Observable<Regions[]>{
-    return this.http.get<Regions[]>(API_URL+'liste');
+  // Recuperation de toute les Regions
+   getRegions():Observable<any>{
+    return this.http.get(API_URL+'liste');
   }
+
+//  Recuperation d'une seule images
+  detailsRegion(id_regions:number):Observable<any>{
+    console.log("Mon ID "+id_regions)
+    return this.http.get<any>(`http://localhost:8080/projet/odk/Regions/uneRegion/${id_regions}`)
+  }
+
+
+
 }

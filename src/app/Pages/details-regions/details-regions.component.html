@@ -1,29 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/fontawesome.min.css" integrity="sha384-QYIZto+st3yW+o8+5OHfT6S482Zsvz2WfOzpFSXMF9zqeLcFV0/wlZpMtyFcZALm" crossorigin="anonymous">
-    <title>Details-région</title>
-</head>
-<body>
+<app-menu></app-menu>
     <div class="container contenu">
         <div class="first-section"> 
             <div class="img-region">
                 <img src="./assets/Images/Carte_Malojojojojoj.gif" alt="Régions">
             </div>
 
-            <div class="description">
+            <div class="description" *ngFor="let Region of UneRegion">
                 <p>
-                    Le Mali, officiellement la République du Mali, est un pays enclavé
-                    d'Afrique de l'Ouest. Le Mali est le huitième plus grand pays d'Afrique,
-                    avec une superficie de plus de 1 240 000 kilomètres carrés. La population
-                    du Mali est de 21,9 millions d'habitants. 67% de sa population était estimée
-                    avoir moins de 25 ans en 2017. Le Mali est divisé en huit régions (régions)
-                    et un district de la capitale. Avec la nouvelle disposition administrative, le
-                    territoire du Mali comprendra vingt régions plus le District de Bamako qui
-                     composera également 10 Communes urbaines au lieu de six (6).
+                   {{Region.id_regions}}
                 </p>
             </div>
 
@@ -31,12 +15,12 @@
 
     </div>
 <!-- LES BOX DE STATISTIQUES -->
-    <div class="details-box container">
-        <div class=" region-statistique superficie-box">
+    <div class="details-box container" >
+        <div class=" region-statistique superficie-box" *ngFor="let Region of UneRegion">
                 <h3>Superficie</h3>
                <span > <i class="fa fa-area-chart fa-2x" aria-hidden="true"></i>
                </span>
-                <h3>120090 km²</h3>
+                <h3> {{Region.superficieregion}}</h3>
         </div>
 
         <div class=" region-statistique superficie-box">
@@ -175,5 +159,3 @@
 </section>
 <!--Section: Contact v.2-->
 </div>
-</body>
-</html>

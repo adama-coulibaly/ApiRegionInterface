@@ -14,6 +14,7 @@ import { TourismeComponent } from './Pages/tourisme/tourisme.component';
 import {HttpClientModule} from '@angular/common/http'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DashboardComponent } from './Pages/dashboard/dashboard.component';
+import { MenuComponent } from './Pages/menu/menu.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { DashboardComponent } from './Pages/dashboard/dashboard.component';
     RegionComponent,
     DetailsRegionsComponent,
     TourismeComponent,
-    DashboardComponent
+    DashboardComponent,
+    MenuComponent
     
 
   ],

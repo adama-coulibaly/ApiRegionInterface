@@ -15,7 +15,7 @@ const routes: Routes = [
   {path:'inscription', component:InscriptionComponent},
   {path:'regions', component:RegionComponent},
   {path:'tourisme', component:TourismeComponent},
-  {path:'details-regions', component:DetailsRegionsComponent},
+  {path:'details-regions/:id_regions', component:DetailsRegionsComponent},
   {path:'dashboard',component:DashboardComponent}
  ];
 

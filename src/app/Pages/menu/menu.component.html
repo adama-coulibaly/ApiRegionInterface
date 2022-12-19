@@ -1,0 +1,65 @@
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #5B7CFD;">
+    <!-- Container wrapper -->
+    <div class="container-fluid">
+   
+<!-- TOOGLE BOUTON -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+  
+      <!-- Collapsible wrapper -->
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <!-- Navbar brand -->
+        <a class="navbar-brand mt-2 mt-lg-0" href="#">
+          <img
+            src="https://i.pinimg.com/originals/2e/cf/73/2ecf7364cd78b7222311518159a72179.jpg"
+            height="50"
+            alt="MDB Logo"
+            loading="lazy"
+          />
+        </a>
+        <!-- Left links -->
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/accueil"  routerLinkActive="active">Accueil</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/tourisme" routerLinkActive="active">Tourisme</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/regions" routerLinkActive="active">Régions</a>
+          </li>
+
+          <li class="nav-item" *ngIf="isLoggedIn == true">
+            <a class="nav-link" routerLink="/dashboard" routerLinkActive="active">Tableau de board</a>
+          </li>
+        </ul>
+        <!-- Left links -->
+      </div>
+      <!-- Collapsible wrapper -->
+  
+      <!-- Right elements -->
+      <div class="d-flex align-items-center">
+        <!-- Icon -->
+                    
+        <!-- Avatar -->
+        <div class="dropdown">
+          <a >
+            <img
+              src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp"
+              class="rounded-circle"
+              height="50"
+              alt="Black and White Portrait of a Man"
+              loading="lazy" />
+          </a>
+       
+        </div>
+      </div>
+      <!-- Right elements -->
+    </div>
+    <!-- Container wrapper -->
+  </nav>
+  <!-- Navbar -->
