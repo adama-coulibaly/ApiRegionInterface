@@ -69,13 +69,18 @@
         <h5 class="modal-title" id="modalAjouterRegionLabel">Ajouter une région</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
+
+<div class="err"> 
+   {{messagedeRetour}}
+</div>
+
       <div class="modal-body">
         <form [formGroup]="formulaire" (ngSubmit)="CreerRegions()">
 
           <div class="ligne-1">
             <div class="col-md-6">
-              <label for="recipient-name" class="col-form-label">Choisir un Pays</label>
-              <select name="pays" id="pays" class="form-control" formControlName="id_pays" name="id_pays">
+              <label for="id_pays" class="col-form-label">Choisir un Pays <span>*</span></label>
+              <select name="pays" id="pays" class="form-control" formControlName="id_pays" id="id_pays" name="id_pays">
                 <option value="1">MALI</option>
                 <option value="2">GHANA</option>
                 <option value="3">SENEGAL</option>
@@ -84,41 +89,41 @@
             </div>
 
             <div class="col-md-6">
-              <label for="recipient-name" class="col-form-label">Nom région:</label>
-              <input type="text" class="form-control" id="recipient-name" formControlName="nomregions" name="nomregions">
+              <label for="nomregions" class="col-form-label">Nom région:<span>*</span></label>
+              <input type="text" class="form-control" id="nomregions" formControlName="nomregions" name="nomregions">
             </div>
         </div>
 
         <div class="ligne-2">
 
           <div class="col-md-6">
-            <label for="recipient-name" class="col-form-label">Superficie de la région:</label>
-            <input type="text" class="form-control" id="recipient-name" formControlName="superficieregion" name="superficieregion">
+            <label for="superficieregion" class="col-form-label">Superficie de la région:<span>*</span></label>
+            <input type="text" class="form-control" id="superficieregion" formControlName="superficieregion" name="superficieregion">
           </div>
           <div class="col-md-6">
-          <label for="recipient-name" class="col-form-label">Activité:</label>
-          <input type="text" class="form-control" id="recipient-name" formControlName="activiterregion" name="activiterregion">
+          <label for="activiterregion" class="col-form-label">Activité:<span>*</span></label>
+          <input type="text" class="form-control" id="activiterregion" formControlName="activiterregion" name="activiterregion">
         </div>
       </div>
 
       <div class="ligne-2">
 
         <div class="col-md-6">
-          <label for="recipient-name" class="col-form-label">Langue:</label>
-          <input type="text" class="form-control" id="recipient-name" formControlName="languemregion" name="languemregion">
+          <label for="languemregion" class="col-form-label">Langue:<span>*</span></label>
+          <input type="text" class="form-control" id="languemregion" formControlName="languemregion" name="languemregion">
         </div>
         <div class="col-md-6">
-        <label for="recipient-name" class="col-form-label">Code région:</label>
-        <input type="text" class="form-control" id="recipient-name" formControlName="coderegion" name="coderegion">
+        <label for="recipient-name" class="col-form-label">Code région:<span>*</span></label>
+        <input type="text" class="form-control" id="coderegion" formControlName="coderegion" name="coderegion">
       </div>
       </div>
 
       <div class="col-md-12">
-        <label for="recipient-name" class="col-form-label">Choisir une image:</label>
-        <input type="file" class="form-control" id="recipient-name"  (change)="fileChang($event)" formControlName="file" name="file">
+        <label for="file" class="col-form-label">Choisir une image:<span>*</span></label>
+        <input type="file" class="form-control" id="file"  (change)="fileChang($event)" formControlName="file" name="file">
       </div>
         <div class="col-md-12">
-          <label for="recipient-name" class="col-form-label">Description:</label>
+          <label for="description" class="col-form-label">Description:<span>*</span></label>
           <textarea type="text" name="description" rows="2" class="form-control md-textarea"
             formControlName="description" name="description"></textarea>
         </div>

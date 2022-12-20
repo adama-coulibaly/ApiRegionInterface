@@ -43,7 +43,9 @@ fichier: any;
   activiteRegion: any;
   descriptionRegions: any;
   id_Regions: any;
-  id_Pays!: any;
+  id_pays: any;
+  messagedeRetour:any
+  superficieregion:any
 
 
   constructor(private boardService:UserService, private regionService:RegionsService,private formB: FormBuilder) { }
@@ -71,19 +73,32 @@ this.CONTER = this.lesRegions.length
         activiterregion:["",Validators.required]
  })
 
-      console.log("Regions adama :"+this.formulaire.value)
   }
+
 
   // ======================================= ICI ON AJOUTE UNE REGION ======================================
 
+  //   CETTE FONCTION S'EN CHARGE DE L'IMAGE
   fileChang(event: any) {
     this.file = event.target.files[0]
     console.log(event)
   }
+// POUR VIDER LE FORMULAIRE APRES L'ENVOIS
+resetForm(){
+  this.id_Regions= ''
+  this.nomRegions= ''
+  this.codeRegions=''
+  this.activiteRegion= ''
+  this.superficie=''
+  this.langueRegions=''
+  this.images=''
+  this.descriptionRegions=''
+}
+
   
   CreerRegions(){
 
-  this.id_Pays = 1;
+  this.id_pays = 1;
   this.nomRegions = this.formulaire!.get("nomregions")!.value;
   this.images = this.formulaire!.get("file")!.value;
   this.codeRegions = this.formulaire!.get("coderegion")!.value;
@@ -92,14 +107,32 @@ this.CONTER = this.lesRegions.length
   this.activiteRegion = this.formulaire!.get("activiterregion")!.value;
   this.descriptionRegions = this.formulaire!.get("description")!.value;
 
-  console.log("ID: "+this.id_Regions+" Nom: " +this.nomRegions+"Images: " +this.images+"Code: " +this.codeRegions+"Superf: " +this.superficie+"Activite: " +this.activiteRegion+"Descr: " +this.descriptionRegions);
 
-   this.regionService.AjouterRegion(this.id_Pays,this.nomRegions,this.codeRegions,this.activiteRegion,this.superficie,this.langueRegions,this.descriptionRegions,this.file)
+if(this.id_pays != "" && this.nomRegions != "", this.images != "" && this.codeRegions != "" && this.langueRegions != "" && this.superficie!="" && this.activiteRegion !="" && this.descriptionRegions!=""){
+
+   this.regionService.AjouterRegion(this.id_pays,this.nomRegions,this.codeRegions,this.activiteRegion,this.superficie,this.langueRegions,this.descriptionRegions,this.file)
     .subscribe(data=>{
       const RegionEnregistrer = data
-      console.log("================= "+RegionEnregistrer)
+
+      if(RegionEnregistrer.status = true){
+       this.messagedeRetour = RegionEnregistrer.message;
+      }
+      else{
+         this.messagedeRetour = RegionEnregistrer.message;
+      } 
     })
+    this.resetForm();
   }
+else{
+  this.messagedeRetour ="Veuiller remplir tous les champs !";
+}
+}
+
+
+
+
+
+
 
 
 

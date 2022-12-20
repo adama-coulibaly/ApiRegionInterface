@@ -43,6 +43,7 @@ AjouterRegion(id_pays:any, nomregions:string,coderegion:string,activiterregion:s
   let data =new FormData();
   data.append("id_pays", id_pays);
   data.append("coderegion",coderegion);
+  data.append("nomregions",nomregions);
   data.append("activiterregion",activiterregion);
   data.append("superficieregion",superficieregion);
   data.append("languemregion",languemregion);
