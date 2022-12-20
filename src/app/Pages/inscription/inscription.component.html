@@ -12,38 +12,78 @@
 
     <div class="principale">
         <h1>Inscription</h1>
-        <form action="#" method="post" class="container">
+
+        <div class="alert alert-success" *ngIf="isSuccessful">
+            Inscription reussie avec succèes
+        </div>
+
+        <form class="container" *ngIf="!isSuccessful" name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm"
+            novalidate>
 
             <div class="champs row">
 
-
+                <!-- VERIFICATION DE LA VALIDITE DES NOMS -->
                 <div class="lesNoms col-md-6 my-2">
-                    <input type="text" name="username" id="username" placeholder="username" class="form-control ">
+                    F <input type="text" name="username" id="username" placeholder="username" class="form-control "
+                        name="username" [(ngModel)]="form.username" required minlength="3" maxlength="20"
+                        #username="ngModel">
                 </div>
+                <!-- ICI LE MESSAGE D'ERREUR -->
+                <div class="alert-danger" *ngIf="username.errors && f.submitted">
+                    <div *ngIf="username?.errors?.['required']">Le champs username est obligatoire</div>
+                    <div *ngIf="username?.errors?.['minlength']">
+                       3 caracteurs au minimum
+                    </div>
+                    <div *ngIf="username?.errors?.['maxlength']">
+                        Username must be at most 20 characters
+                    </div>
+                </div>
+                <!-- LE CHAMPS EMAIL -->
                 <div class="lesNoms col-md-6  my-2">
-                    <input type="email" name="email" id="email" placeholder="Email" class="form-control">
+                    <input type="email" name="email" id="email" placeholder="Email" class="form-control"
+                        [(ngModel)]="form.email" required email #email="ngModel">
+                </div>
+                <!--  ERREUR -->
+                <div class="alert-danger" *ngIf="email.errors && f.submitted">
+                    <div *ngIf="email?.errors?.['required']">Ce champs est obligatoire</div>
+                    <div *ngIf="email?.errors?.['email']">
+                        Email invalide
+                    </div>
+                </div>
+
+                <div class="lesPasses col-md-6 my-2">
+                    <input type="password" name="password" id="password" placeholder="Mot de passe" class="form-control"
+                        name="password" [(ngModel)]="form.password" required [minlength]="6" #password="ngModel">
                 </div>
                 <div class="lesPasses col-md-6 my-2">
-                    <input type="password" name="passe1" id="passe1" placeholder="Mot de passe" class="form-control">
+                    <input type="password" name="passe2" id="password2" placeholder="Confirmé" class="form-control"
+                        name="password2" [(ngModel)]="form.password2" required [minlength]="6" #password2="ngModel">
                 </div>
-                <div class="lesPasses col-md-6 my-2">
-                    <input type="password" name="passe2" id="passe2" placeholder="Confirmé" class="form-control">
+
+                <div class="alert-danger" *ngIf="password.errors && f.submitted">
+                    <div *ngIf="password?.errors?.['required']">Le chams mot de passe est obligatoire</div>
+                    <div *ngIf="password?.errors?.['minlength']">
+                        6 carateurs au minimum
+                    </div>
                 </div>
-                
+
             </div>
 
             <div class="btn-submit">
                 <input type="submit" value="S'inscrire" name="inscription" class="btn submit-btn">
             </div>
 
+            <div class="alert alert-warning" *ngIf="f.submitted && isSignUpFailed">
+                Inscription impossible<br/>{{ errorMessage }}
+            </div>
+
+
         </form>
         <div class="foter-text">
             <h2>Vous avez déjà un compte ? <span><a routerLink="/connexion">Connexion</a></span></h2>
         </div>
-    </div>
+
     <div class="annuler"> <button class="btn btn-danger"><a routerLink="/accueil">Annuler</a></button></div>
-
-
+    </div>
 </body>
-
 </html>

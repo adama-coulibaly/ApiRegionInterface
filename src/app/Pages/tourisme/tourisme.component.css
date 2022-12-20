@@ -1,5 +1,8 @@
 .container h2{
     margin-top: 6%;
+    text-align: center;
+    font-weight: 800;
+    margin: 5%;
 }
 .box-lieux{
     display: grid;
@@ -12,8 +15,8 @@
     /* justify-content: space-around; */
 }
 .box-image img{
-    width: 500px;
-    height: auto;
+    width: 450px;
+    height: 300px;
 }
 .description{
     text-align: justify;
@@ -26,7 +29,7 @@
     justify-content: space-evenly;
 }
 .footer-desc .btn{
-    background-color: #FF6B00;
+    background-color: #C27E00;
     color: white;
     font-weight: 500; 
 }
@@ -34,7 +37,11 @@
     color: white;
 text-decoration: none;
 }
-
+.lieux{
+    text-align: center; font-weight: 900;
+    color: #C27E00;
+    font-size: 25px;
+}
 /* =======================================================================  MEDI QUERY MOBILE SCREEN +++++++++++++++++++++++ */
 
 @media screen and (max-width: 767px) {

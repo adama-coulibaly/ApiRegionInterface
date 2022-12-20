@@ -9,11 +9,22 @@
     color: white;
 }  
 
+.nav-item {
+  font-weight: 900;
+}
  .nav-item .active {
-    background-color: #FF6B00;
-    color: white;
+    background-color: white;
+    color: #C27E00;
   }
   .nav-item :hover {
-    background-color: #FF6B00;
-    color: white;
+    background-color: #fff;
+    color: #C27E00;
+    font-weight: 900;
   }
+  
+.dropdown-menu.show {
+  text-align: center;
+  display: block;
+  margin-left: -300%;
+  width: 210px;
+}

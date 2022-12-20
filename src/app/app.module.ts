@@ -15,6 +15,7 @@ import {HttpClientModule} from '@angular/common/http'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DashboardComponent } from './Pages/dashboard/dashboard.component';
 import { MenuComponent } from './Pages/menu/menu.component';
+import { TestComponent } from './test/test.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { MenuComponent } from './Pages/menu/menu.component';
     DetailsRegionsComponent,
     TourismeComponent,
     DashboardComponent,
-    MenuComponent
+    MenuComponent,
+    TestComponent
     
 
   ],

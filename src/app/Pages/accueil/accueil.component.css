@@ -28,7 +28,7 @@
 .box-description h1{
     text-align: center;
  font-weight: bold;
- color: #5B7CFD;
+ color: #C27E00;
 }
 
 .boutons-box{
@@ -37,7 +37,7 @@
  
 }
 .boutons-box .btn{
-    background-color: #FF6B00;
+    background-color: #C27E00;
     color: white;
     font-weight: 500; 
     width: 30%;
@@ -48,7 +48,7 @@
     color: white;
 }
 .carousel-caption{
-    background-color: #FF6B00;
+    background-color: #C27E00;
   color: white;
 }
 .caroussel img{

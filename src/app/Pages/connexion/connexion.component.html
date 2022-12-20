@@ -10,6 +10,7 @@
 
 <body>
 
+
     <div class="principale">
         <h1>Connexion</h1>
         <form  *ngIf="!isLoggedIn" name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
@@ -28,7 +29,7 @@
             </div>
 
             <div
-            class="alert alert-danger col-md-3"
+            class="alert alert-danger col-md-6"
             role="alert"
             *ngIf="username.errors && f.submitted"
           >
@@ -37,7 +38,7 @@
 
             <div class="champs row">
                 <div class="col-md-3"></div>
-                <div class="lesPasses col-md-6 my-3">
+                <div class="lesPasses col-md-6">
                     <input  type="password" placeholder="Mot de passe" class="form-control" name="password" [(ngModel)]="form.password" required minlength="6"  #password="ngModel">
                 </div>
                 <div class="col-md-3"></div>
@@ -45,7 +46,7 @@
             </div>
 
             <div
-            class="alert alert-danger  col-md-3"
+            class="alert alert-danger  col-md-6"
             role="alert"
             *ngIf="password.errors && f.submitted"
           >

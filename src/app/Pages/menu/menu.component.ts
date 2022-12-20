@@ -14,13 +14,19 @@ export class MenuComponent implements OnInit {
   errorMessage = '';
   roles: string[] = [];
   monRole!:any
+  monUser:any
+  monEmail:any
   ngOnInit(): void {
 
     if (this.tokenStorage.getToken()) {
       this.isLoggedIn = true;
       this.roles = this.tokenStorage.getUser().roles;
       this.monRole = this.roles;
+      this.monUser = this.tokenStorage.getUser().username;
+      this.monEmail = this.tokenStorage.getUser().email;
       console.log("Mon role: "+this.roles)
+      console.log("Mon username: "+this.monUser)
+      console.log("Mon email: "+this.monEmail)
     }
 
   }

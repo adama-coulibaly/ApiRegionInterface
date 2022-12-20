@@ -1,5 +1,5 @@
 .first-section{
-    margin-top: 15%;
+    margin-top: 10%;
     display: flex;
     flex-direction: row;
     box-shadow: 0px 4px 29px rgba(0, 0, 0, 0.25);
@@ -19,13 +19,13 @@
 }
 .titre{
     text-align: center;font-weight: bold;
-    color: #5B7CFD; margin-top:3%;
+    color: #000; margin:3%;
 }
 .title-search{
     display: grid;
     grid-template-columns:  500px 1fr;
     justify-content: space-around;
-    background-color: #5B7CFD;
+    background-color: #C27E00;
     padding: 1%; border-radius: 10px;
 }
 .title-search h3{
@@ -62,7 +62,7 @@
 }
 .title-carde h3{
  text-align: center;
- color: #5B7CFD;
+ color: #C27E00;
  font-weight: bold;
 }
 .description-carde p {
@@ -74,7 +74,7 @@
     margin: 3%;
 }
 .bouton-carde .btn{
-    background-color: #FF6B00;
+    background-color: #C27E00;
 }
 .bouton-carde a{
     color: white;

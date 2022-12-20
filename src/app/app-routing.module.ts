@@ -7,6 +7,7 @@ import { DetailsRegionsComponent } from './Pages/details-regions/details-regions
 import { InscriptionComponent } from './Pages/inscription/inscription.component';
 import { RegionComponent } from './Pages/region/region.component';
 import { TourismeComponent } from './Pages/tourisme/tourisme.component';
+import { TestComponent } from './test/test.component';
 
 const routes: Routes = [
   {path:"",redirectTo:"accueil",pathMatch:'full'},
@@ -16,7 +17,8 @@ const routes: Routes = [
   {path:'regions', component:RegionComponent},
   {path:'tourisme', component:TourismeComponent},
   {path:'details-regions/:id_regions', component:DetailsRegionsComponent},
-  {path:'dashboard',component:DashboardComponent}
+  {path:'dashboard',component:DashboardComponent},
+  {path:'text',component:TestComponent}
  ];
 
 @NgModule({

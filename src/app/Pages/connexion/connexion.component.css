@@ -10,6 +10,12 @@ body{
 }
 .principale{
     text-align: center;
+    /* width: 50%; */
+}
+
+.alert{
+    align-items: center;
+    margin-left: 26%;
 }
 .principale h1{
 color: white;
