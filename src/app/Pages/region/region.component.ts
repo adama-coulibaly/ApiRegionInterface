@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Commentaire } from 'src/app/Models/models/commentaire';
+import { Regions } from 'src/app/Models/models/regions.model';
 import { RegionsService } from 'src/app/Services/regions.service';
 import { UserService } from 'src/app/Services/user-service.service';
 
@@ -13,7 +15,8 @@ export class RegionComponent implements OnInit {
 
   page = 1;
 
- 
+
+
 
   content?: string;
   lesRegion!:any

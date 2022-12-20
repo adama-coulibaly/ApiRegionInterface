@@ -23,6 +23,7 @@ export class InscriptionComponent implements OnInit {
   }
 
   onSubmit(): void {
+    // LA METHODE DE VERIFICATION DES MOTS DE PASSE N'EST PAS GERE D'ABORD
     const { username, email, password } = this.form;
 
     this.authService.register(username, email, password).subscribe(

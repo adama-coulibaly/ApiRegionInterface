@@ -33,25 +33,23 @@ export class RegionsService {
 
   // FAIRE UN COMMENTAIRES
 
-  FaireCommentaires(objet:any,description:any,id:any,id_regions:any):Observable<any>{
-const data:FormData=new FormData();
-let comm = [
-  {
-    "objet":objet,
-   "description":description,
-   "user":{
-       "id":id
-   },
-   "regions":{
-       "id_regions":id_regions,
-   }
-}
-];
-data.append('data',JSON.stringify(comm).slice(1,JSON.stringify(comm).lastIndexOf(']')));
-
-    return this.http.post(`http://localhost:8080/projet/odk/Commentaire/creer`,data);
+  FaireCommentaires(commentaire:any):Observable<any>{
+    return this.http.post(`http://localhost:8080/projet/odk/Commentaire/creer/${commentaire.id_users}/${commentaire.id_regions}`,commentaire);
   }
 
+// AJOUTER UNE REGIONS ICI
+
+AjouterRegion(id_pays:any, nomregions:string,coderegion:string,activiterregion:string,superficieregion:string,languemregion:string,description:string,file:any):Observable<any>{
+  let data =new FormData();
+  data.append("id_pays", id_pays);
+  data.append("coderegion",coderegion);
+  data.append("activiterregion",activiterregion);
+  data.append("superficieregion",superficieregion);
+  data.append("languemregion",languemregion);
+  data.append("description",description);
+  data.append("file",file)
+  return this.http.post(`http://localhost:8080/projet/odk/Regions/ajouterRegion`,data);
+}
 
 
 }

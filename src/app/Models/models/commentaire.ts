@@ -1,7 +1,7 @@
 export class Commentaire{
-    idcommentaire!:number;
-    objet!:string;
+    idcommentaire!:any;
+    // objet!:string;
     description!:String;
-    id_regions!:number
-    id_users!:number
+    id_regions!:any
+    id_users!:any
 }

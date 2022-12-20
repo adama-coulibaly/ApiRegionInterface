@@ -1,16 +1,19 @@
-import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
+import { Component, OnInit, Pipe, PipeTransform } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { ReversePipe } from 'ngx-pipes/public_api';
 import { Commentaire } from 'src/app/Models/models/commentaire';
 import { RegionsService } from 'src/app/Services/regions.service';
 import { TokenStorageService } from 'src/app/Services/token-storage.service';
+
+
 
 @Component({
   selector: 'app-details-regions',
   templateUrl: './details-regions.component.html',
   styleUrls: ['./details-regions.component.css']
 })
-export class DetailsRegionsComponent implements OnInit {
+
+export class DetailsRegionsComponent implements OnInit  {
 
 // COMMENTAIRES 
 
@@ -25,9 +28,12 @@ export class DetailsRegionsComponent implements OnInit {
   Comm:any;
   Objet:any;
   COMMENTER:any
+  valide!: string;
 
 
   constructor(private serviceRegions:RegionsService,private route: ActivatedRoute,private tokenStorage:TokenStorageService) { }
+  
+
   commentaires: any;
   nbreCommentaire!:any
   UneRegion!:any
@@ -37,9 +43,18 @@ export class DetailsRegionsComponent implements OnInit {
   description:any
 
 
+  commentaire:Commentaire = {
+    // objet: '',
+    description: '',
+    id_regions: null,
+    id_users: null,
+    idcommentaire: null
+  }
+  invalide!:String //POUR LES ERREURS DE MESSAGES
+  statut!:boolean
   mesDonnees!:any
   ngOnInit(): void {
-
+    // this.statut = true
       // Permet faire le routage avec notre tirage pour recuperer les postulants tirers
       const id_regions = +this.route.snapshot.params["id_regions"];
       // console.log("ID = "+id_regions)
@@ -64,12 +79,35 @@ export class DetailsRegionsComponent implements OnInit {
 
 onSubmit() {
 
-  alert("zertdfgkhjlm")
-  this.roles = this.tokenStorage.getUser().id
+   
+const id_Regions = +this.route.snapshot.params["id_regions"]; // RECUPERATION DE ID REGIONS
+this.id_user = this.tokenStorage.getUser().id
 
-  this.serviceRegions.FaireCommentaires(this.Objet,this.Comm,this.id_user,this.roles).subscribe(data=>{
+  this.commentaire.id_regions = id_Regions;
+  this.commentaire.id_users = this.id_user;
+
+  if(this.commentaire.id_users == null){
+    
+    this.statut = true
+    this.invalide = "Veuiller vous  connecter";
+  }
+  else if(this.commentaire.description == ""){
+    this.statut = true
+    this.invalide = "Veuiller ecrire un message !";
+  }
+  else{
+    // this.statut = false
+    // this.valide = "Message envoyé avec succès";
+      this.serviceRegions.FaireCommentaires(this.commentaire).subscribe(data=>{
     this.COMMENTER = data
-  })
+  }); window.location.reload();
+  }
+
+
+
+ 
+
 }
+
 }
 

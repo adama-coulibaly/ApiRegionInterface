@@ -36,6 +36,10 @@
     font-weight: bold;
     color: #5B7CFD;
 }
+.bx img{
+    width: 50%;
+    height: 50%;
+}
  /* .pays{
    background-color: #93a6f5; 
 }*/

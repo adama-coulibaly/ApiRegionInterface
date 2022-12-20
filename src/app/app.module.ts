@@ -16,6 +16,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DashboardComponent } from './Pages/dashboard/dashboard.component';
 import { MenuComponent } from './Pages/menu/menu.component';
 import { TestComponent } from './test/test.component';
+import { NgPipesModule } from 'ngx-pipes';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { TestComponent } from './test/test.component';
     NgxPaginationModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgPipesModule
   ],
   providers: [],
   bootstrap: [AppComponent]
