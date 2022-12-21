@@ -55,6 +55,7 @@
 /* ================================================= FOOTER =================================== */
  footer{
     background-color: #5B7CFD;
+    width: 100%;
   }
 
   .left-footer .fa,h1,h2,h3{
@@ -99,6 +100,11 @@
       right: 0;
       top: 0;
     }
+
+    footer{
+      width: 100%;
+    }
+
     .topnav.responsive a {
       float: none;
       display: block;

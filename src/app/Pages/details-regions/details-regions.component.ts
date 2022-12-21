@@ -4,6 +4,7 @@ import { ReversePipe } from 'ngx-pipes/public_api';
 import { Commentaire } from 'src/app/Models/models/commentaire';
 import { RegionsService } from 'src/app/Services/regions.service';
 import { TokenStorageService } from 'src/app/Services/token-storage.service';
+import Swal from 'sweetalert2';
 
 
 
@@ -100,7 +101,15 @@ this.id_user = this.tokenStorage.getUser().id
     // this.valide = "Message envoyé avec succès";
       this.serviceRegions.FaireCommentaires(this.commentaire).subscribe(data=>{
     this.COMMENTER = data
-  }); window.location.reload();
+    Swal.fire({
+      position: 'top-end',
+      icon: 'success',
+      title: 'Your work has been saved',
+      showConfirmButton: false,
+      timer: 1500
+    })
+  }); 
+  // window.location.reload();
   }
 
 

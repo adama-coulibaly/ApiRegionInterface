@@ -34,7 +34,7 @@
     
 <div class="section-card container">
 
-    <div class="cardes" *ngFor="let regions of lesRegion |paginate:{itemsPerPage: 6, currentPage:page}; let i =index">
+    <div class="cardes" *ngFor="let regions of lesRegion | paginate:{itemsPerPage: 6, currentPage:page}; let i =index">
 
         <div class="images-carde">  <img src="../../../assets/Images/{{regions.images}}" alt="Régions"></div>
         

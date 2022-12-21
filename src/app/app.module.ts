@@ -17,6 +17,7 @@ import { DashboardComponent } from './Pages/dashboard/dashboard.component';
 import { MenuComponent } from './Pages/menu/menu.component';
 import { TestComponent } from './test/test.component';
 import { NgPipesModule } from 'ngx-pipes';
+import { DashboardDirective } from './Services/dashboard.directive';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { NgPipesModule } from 'ngx-pipes';
     TourismeComponent,
     DashboardComponent,
     MenuComponent,
-    TestComponent
+    TestComponent,
+    DashboardDirective
     
 
   ],

@@ -52,5 +52,16 @@ AjouterRegion(id_pays:any, nomregions:string,coderegion:string,activiterregion:s
   return this.http.post(`http://localhost:8080/projet/odk/Regions/ajouterRegion`,data);
 }
 
+//  ON RECUPER TOUS LES UTILISATEURS
+
+mesUsers():Observable<any>{
+  return this.http.get<any>("http://localhost:8080/projet/odk/User/lesUser")
+}
+
+// ICI LE NOMBRE TOTAL DES UTILISATEUR
+nombreUsers():Observable<any>{
+  return this.http.get<any>("http://localhost:8080/projet/odk/User/nbreUser")
+}
+
 
 }
