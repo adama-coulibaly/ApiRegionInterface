@@ -63,20 +63,22 @@
               <tr>
                 <th scope="col">N°</th>
                 <th scope="col">Année</th>
-                <th scope="col">Nombre d'habitants</th>
-                <th scope="col">Densité</th>
+                <th scope="col">habitants</th>
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <th scope="row"></th>
-                <td></td>
-                <td></td>
+              <tr *ngFor="let habitant of habitation | paginate:{itemsPerPage: 5, currentPage:pages}; let i =index">
+                <td scope="row">{{i+1}}</td>
+                <td>{{habitant.annee}}</td>
+                <td>{{habitant.nbre_population}} hbts</td>
                 <td></td>
               </tr>
               
             </tbody>
           </table>
+          
+          <pagination-controls previousLabel="Précedent" nextLabel="Suivant" (pageChange)="pages=$event"></pagination-controls>
+
     </div>
 
 <!-- ================= Contact form -->
@@ -98,12 +100,12 @@
 
                               <!--Grid row-->
 
-              <div role="alert" style="text-align: center; color: red;font-weight: bold;">
+              <div *ngIf="invalide" class="err" role="alert" style="text-align: center; color: red;font-weight: bold;">
                  <h2>{{invalide}}</h2>
               </div>
-              <!-- <div role="alert" style="text-align: center; color: green;font-weight: bold;">
+            <div *ngIf="valide" role="alert" style="text-align: center; color: green;font-weight: bold;">
                 <p>{{valide}}</p>
-             </div> -->
+             </div> 
 
                 <!--Grid row-->
                 <div class="row">
@@ -132,20 +134,26 @@
         </div>
         <!--Grid column-->
 
-        <div class="lesCommentaires col-md-6" *ngIf="nbreCommentaire != 0">
-            <div class="poster" *ngFor="let Commentaires of commentaires.slice().reverse()" >
-                <div class="users col-md-3">
-                    <img src="https://cdn-icons-png.flaticon.com/512/149/149071.png" alt="avatar" width="50px" height="50px">
-                    <h3>{{Commentaires.user.username}}</h3>
+        <div class="lesCommentaires col-md-6" *ngIf="nbreCommentaire != 0" >
+            <h4><span>{{nbreCommentaire}}</span> commentaires au total</h4>
+            <div style="height: 300px; overflow: scroll;border: 1px solid;box-shadow: inset 0 0 10px #f8a100;">
+                <div class="poster" *ngFor="let Commentaires of commentaires.slice().reverse()" >
+                    <div class="users col-md-3" >
+                        <img src="https://cdn-icons-png.flaticon.com/512/149/149071.png" alt="avatar" width="50px" height="50px">
+                        <h3>{{Commentaires.user.username}}</h3>
+                    </div>
+                    <div>
+                        <h4>{{Commentaires.objet}}</h4>
+                        <p style="overflow-wrap: anywhere;">{{Commentaires.description}}</p>
+                    </div>
+    
                 </div>
-                <div>
-                    <h4>{{Commentaires.objet}}</h4>
-                    <p>{{Commentaires.description}}</p>
-                </div>
-
             </div>
+      
             
-        </div><div class="col-md-6" style="text-align: center;" *ngIf="nbreCommentaire == 0"><h5>Pas de commentaire</h5></div>
+        </div>
+        
+        <div class="col-md-6" style="text-align: center;" *ngIf="nbreCommentaire == 0"><h5>Pas de commentaire</h5></div>
 
     </div>
 
@@ -170,3 +178,6 @@
 </section>
 <!--Section: Contact v.2-->
 </div>
+
+<!--  -->
+<app-footer></app-footer>

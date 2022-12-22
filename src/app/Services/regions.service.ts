@@ -63,5 +63,11 @@ nombreUsers():Observable<any>{
   return this.http.get<any>("http://localhost:8080/projet/odk/User/nbreUser")
 }
 
+// ICI ON RECUPERE LES HABITANTS D'UNE REGION
+
+lesHABITANTS(id_Regions:any):Observable<any>{
+  return this.http.get<any>(`http://localhost:8080/projet/odk/Habitants/listerParRegion/${id_Regions}`);
+}
+
 
 }

@@ -109,7 +109,6 @@ export class DashboardComponent implements OnInit {
 
 
   CreerRegions() {
-
     this.id_pays = 1;
     this.nomRegions = this.formulaire!.get("nomregions")!.value;
     this.images = this.formulaire!.get("file")!.value;

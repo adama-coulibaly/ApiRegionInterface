@@ -39,19 +39,19 @@
   <table class="table table-striped">
     <thead>
       <tr>
-        <th scope="col">N°</th>
+        <th class="nombre" scope="col">N°</th>
         <th scope="col">Noms</th>
-        <th scope="col">Superficie </th>
+        <th class="nombre" scope="col">Superficie </th>
         <th scope="col">Activité</th>
         <th scope="col">Langues</th>
         <th scope="col">Actions</th>
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let regions of lesRegions  | paginate:{itemsPerPage: 5, currentPage:page}; let i =index">
-        <th scope="row">{{i+1}}</th>
+      <tr *ngFor="let regions of lesRegions  | paginate:{itemsPerPage:5, currentPage:page}; let i =index">
+        <th class="nombre" scope="row">{{i+1}}</th>
         <td>{{regions.nomregions}}</td>
-        <td>{{regions.superficieregion}} km²</td>
+        <td class="nombre">{{regions.superficieregion}} km²</td>
         <td>{{regions.activiterregion}}</td>
         <td>{{regions.languemregion}}</td>
         <td>
@@ -163,14 +163,14 @@
     
     <table class="table">
         <thead>
-            <th>N°</th>
+            <th >N°</th>
             <th>Username</th>
             <th>Email</th>
             <th>Rôle</th>
         </thead>
         <tbody>
             <tr *ngFor="let Users of LesUsers | paginate:{itemsPerPage: 5, currentPage:pages}; let i =index ">
-              <td>{{i+1}}</td>
+              <td >{{i+1}}</td>
               <td>{{Users.username}}</td>
               <td>{{Users.email}}</td>
               <td>{{Users.roles[0].name}}</td>
@@ -189,3 +189,6 @@
   </div>
 </div>
 </div>
+
+<!--  -->
+<app-footer></app-footer>

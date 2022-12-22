@@ -71,4 +71,5 @@ table{
 /* ============================== MOBILE =================================== */
 @media screen and (max-width: 600px) {
 .icones{display: flex; flex-direction: column; gap: 20px;}
+.nombre{display: none;}
 }

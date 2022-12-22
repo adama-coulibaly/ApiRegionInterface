@@ -2,6 +2,7 @@ import { Component, OnInit, Pipe, PipeTransform } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ReversePipe } from 'ngx-pipes/public_api';
 import { Commentaire } from 'src/app/Models/models/commentaire';
+import { Regions } from 'src/app/Models/models/regions.model';
 import { RegionsService } from 'src/app/Services/regions.service';
 import { TokenStorageService } from 'src/app/Services/token-storage.service';
 import Swal from 'sweetalert2';
@@ -30,11 +31,12 @@ export class DetailsRegionsComponent implements OnInit  {
   Objet:any;
   COMMENTER:any
   valide!: string;
+  habitation: any;
 
 
   constructor(private serviceRegions:RegionsService,private route: ActivatedRoute,private tokenStorage:TokenStorageService) { }
   
-
+pages=1
   commentaires: any;
   nbreCommentaire!:any
   UneRegion!:any
@@ -48,6 +50,7 @@ export class DetailsRegionsComponent implements OnInit  {
     // objet: '',
     description: '',
     id_regions: null,
+    
     id_users: null,
     idcommentaire: null
   }
@@ -70,8 +73,12 @@ export class DetailsRegionsComponent implements OnInit  {
     this.serviceRegions.RegionsCommentaire(id_regions).subscribe(data=>{
       this.commentaires = data;
       this.nbreCommentaire = this.commentaires.length;
+  });
 
-      
+  // ICI ON RECUPER LES HABITANTS D'UNE REGION SPECIFIQUE
+  
+  this.serviceRegions.lesHABITANTS(id_regions).subscribe(data=>{
+    this.habitation = data
   })
 }
 
@@ -95,27 +102,16 @@ this.id_user = this.tokenStorage.getUser().id
   else if(this.commentaire.description == ""){
     this.statut = true
     this.invalide = "Veuiller ecrire un message !";
+    
   }
   else{
     // this.statut = false
-    // this.valide = "Message envoyé avec succès";
+    this.valide = "Message envoyé avec succès";
       this.serviceRegions.FaireCommentaires(this.commentaire).subscribe(data=>{
     this.COMMENTER = data
-    Swal.fire({
-      position: 'top-end',
-      icon: 'success',
-      title: 'Your work has been saved',
-      showConfirmButton: false,
-      timer: 1500
-    })
-  }); 
-  // window.location.reload();
-  }
-
-
-
- 
-
+  });
+  window.location.reload()
+  } 
 }
 
 }

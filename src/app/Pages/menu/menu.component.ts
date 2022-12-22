@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { TokenStorageService } from 'src/app/Services/token-storage.service';
 
 @Component({
@@ -8,7 +9,7 @@ import { TokenStorageService } from 'src/app/Services/token-storage.service';
 })
 export class MenuComponent implements OnInit {
 
-  constructor(private tokenStorage: TokenStorageService) { }
+  constructor(private tokenStorage: TokenStorageService,private router:Router) { }
   isLoggedIn = false;
   isLoginFailed = false;
   errorMessage = '';
@@ -37,7 +38,9 @@ export class MenuComponent implements OnInit {
   logout(): void {
     console.log("Je suis cliquer")
     this.tokenStorage.signOut();
+    this.router.navigateByUrl('accueil')
     window.location.reload();
+
   }
 
 }
