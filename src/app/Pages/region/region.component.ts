@@ -15,7 +15,7 @@ export class RegionComponent implements OnInit {
 
   page = 1;
 
-
+  searchText:any
 
 
   content?: string;

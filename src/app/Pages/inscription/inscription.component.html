@@ -29,7 +29,7 @@
                         #username="ngModel">
                 </div>
                 <!-- ICI LE MESSAGE D'ERREUR -->
-                <div class="alert-danger" *ngIf="username.errors && f.submitted">
+                <div class="alert  alert-danger" *ngIf="username.errors && f.submitted">
                     <div *ngIf="username?.errors?.['required']">Le champs username est obligatoire</div>
                     <div *ngIf="username?.errors?.['minlength']">
                        3 caracteurs au minimum
@@ -44,7 +44,7 @@
                         [(ngModel)]="form.email" required email #email="ngModel">
                 </div>
                 <!--  ERREUR -->
-                <div class="alert-danger" *ngIf="email.errors && f.submitted">
+                <div class="alert  alert-danger" *ngIf="email.errors && f.submitted">
                     <div *ngIf="email?.errors?.['required']">Ce champs est obligatoire</div>
                     <div *ngIf="email?.errors?.['email']">
                         Email invalide
@@ -60,7 +60,7 @@
                         name="password2" [(ngModel)]="form.password2" required [minlength]="6" #password2="ngModel">
                 </div>
 
-                <div class="alert-danger" *ngIf="password.errors && f.submitted">
+                <div class="alert  alert-danger" *ngIf="password.errors && f.submitted">
                     <div *ngIf="password?.errors?.['required']">Le chams mot de passe est obligatoire</div>
                     <div *ngIf="password?.errors?.['minlength']">
                         6 carateurs au minimum

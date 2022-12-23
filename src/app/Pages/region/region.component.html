@@ -27,14 +27,14 @@
     <div class="title-search container">
         <div class="container"><h3>Faite vos Recherches ici</h3></div>
         <div class="btn-search">
-            <input type="search" class="btn" placeholder="Recherche...">
+            <input type="search" class="btn" placeholder="Recherche..." [(ngModel)]="searchText">
         </div>
     </div>
     <!-- Les cardes -->
     
 <div class="section-card container">
 
-    <div class="cardes" *ngFor="let regions of lesRegion | paginate:{itemsPerPage: 6, currentPage:page}; let i =index">
+    <div class="cardes" *ngFor="let regions of lesRegion | filter:searchText | paginate:{itemsPerPage: 6, currentPage:page} let i =index">
 
         <div class="images-carde">  <img src="../../../assets/Images/{{regions.images}}" alt="Régions"></div>
         

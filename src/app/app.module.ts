@@ -19,6 +19,7 @@ import { TestComponent } from './test/test.component';
 import { NgPipesModule } from 'ngx-pipes';
 import { DashboardDirective } from './Services/dashboard.directive';
 import { FooterComponent } from './Pages/footer/footer.component';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import { FooterComponent } from './Pages/footer/footer.component';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    NgPipesModule
+    NgPipesModule,
+    Ng2SearchPipeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

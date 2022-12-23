@@ -69,5 +69,11 @@ lesHABITANTS(id_Regions:any):Observable<any>{
   return this.http.get<any>(`http://localhost:8080/projet/odk/Habitants/listerParRegion/${id_Regions}`);
 }
 
+// ICI ON RECUPERE LES HABITANTS D'UNE REGION
+
+ModifierRegions(regions:Regions, id_Regions:any):Observable<any>{
+  return this.http.get<any>(`http://localhost:8080/projet/odk/Regions/modifier/${id_Regions}`);
+}
+
 
 }

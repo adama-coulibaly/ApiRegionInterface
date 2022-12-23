@@ -24,6 +24,8 @@ export class DashboardComponent implements OnInit {
     description: '',
     nombrecommentaire: 0
   }
+  toutsLesRegion!:Regions
+
 
 
 
@@ -53,6 +55,7 @@ export class DashboardComponent implements OnInit {
 
   page = 1;
   pages = 1
+  RG!: Regions;
 
 
   constructor(private regionService: RegionsService, private formB: FormBuilder) { }
@@ -93,8 +96,16 @@ export class DashboardComponent implements OnInit {
   //   CETTE FONCTION S'EN CHARGE DE L'IMAGE
   fileChang(event: any) {
     this.file = event.target.files[0]
-    console.log(event)
+    // console.log(event)
   }
+
+  fileChangm(event: any) {
+    this.file = event.target.files[0]
+    // console.log(event)
+  }
+
+
+
   // POUR VIDER LE FORMULAIRE APRES L'ENVOIS
   resetForm() {
     this.id_Regions = ''
@@ -142,9 +153,45 @@ export class DashboardComponent implements OnInit {
 
 
 
+// LA FONCTION A EXECUTER LORS DU CLICK SUR UNE REGION
+
+modification(id_regions:number){
+   // LA RECUPERATION DE TOUT LES REGIONS DANS LA BASE DE DONNEE
+   this.regionService.detailsRegion(id_regions).subscribe(data => {
+  this.lesRegions = data
+  // console.log("Je suis le nom: "+this.lesRegions.nomregions)
+  });
 
 
+}
 
+sendModification(id_regions:number){
+
+     // LA RECUPERATION DE TOUT LES REGIONS DANS LA BASE DE DONNEE
+     this.regionService.detailsRegion(id_regions).subscribe(data => {
+      this.lesRegions = data
+      console.log("Je suis le nom: "+this.lesRegions.nomregions)
+      });
+
+  this.id_pays = 1;
+  this.nomRegions = this.lesRegions.nomregions;
+  this.images = this.formulaire!.get("file")!.value;
+  this.codeRegions = this.lesRegions.coderegion
+  this.langueRegions = this.lesRegions.languemregion
+  this.superficie = this.lesRegions.superficie
+  this.activiteRegion = this.lesRegions.activiterregion
+  this.descriptionRegions = this.lesRegions.description
+  
+  console.log("IMG: "+this.images)
+
+  this.regionService.AjouterRegion(this.id_pays,this.nomRegions,this.codeRegions,this.activiteRegion,this.superficie,this.langueRegions,this.descriptionRegions,this.images)
+  .subscribe(
+    data=>{  
+       console.log("Le Message : "+data.message)
+        }
+  )
+
+}
 
 
 
